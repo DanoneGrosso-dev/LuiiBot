@@ -72,3 +72,7 @@ bot.on('guildMemberAdd', member => {
 
 });
 
+bot.on('guildMemberAdd', member => {
+    bot.guilds.get(member.guild.id).members.get(member.id).sendMessage(`Bem-Vindo ${member} ao ${member.guild.name}\n \n:star2: MINECRAFT ORIGINAL E BARATO :star2:\n \nConta FULL ACESSO TOTAL!!!\n- Acesso para alterar o email\n- Acesso para alterar perguntas de segurança\n- Acesso para alterar senha\n- Acesso para alterar nick\n- Acesso para alterar a skin\n \n Loja Confiável de minha autoria. | GustavoLuii ©\nGrupo do Discord: https://discord.gg/BcnX29f\nSite: https://mineluii.com/\n \nDeseja comprar uma? chame o @!GustavoLuii#9510 em seu privado ou acesse nosso site!`);
+
+})
