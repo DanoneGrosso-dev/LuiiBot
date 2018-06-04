@@ -35,6 +35,7 @@ bot.on('message', function (message) {
 if( !message.content.startsWith(PREFIX))
     return;
 
+
 var argv = message.content.substr(PREFIX.length).split(" ");
 console.log("argv: "+argv+", argv[1]: "+argv[1]+"");
 
@@ -48,7 +49,19 @@ switch(argv[0].toLowerCase()) {
         .setColor("14DDDA")
         message.channel.sendEmbed(embedd);
 
+    case "membros":
+        var embedd = new Discord.RichEmbed()
+        .setAuthor("Informações do Servidor:", "https://i.imgur.com/sdY3d7H.jpg")
+        .setColor("14DDDA")
+        .setThumbnail(message.guild.iconURL)
+        .addField("Nome:", message.guild.name)
+       // .addField("Criado em:", message.guild.createdAt)
+       // .addField("Você entrou em:", message.member.joinedAt)
+        .addField("Quantidade de membros:", message.guild.memberCount) 
+        message.channel.sendEmbed(embedd);
+
 }});
+
 
 bot.on('ready', () => {
     bot.user.setActivity('www.mineluii.com | !loja', {type: 'PLAYING'});
@@ -56,4 +69,6 @@ bot.on('ready', () => {
 
 bot.on('guildMemberAdd', member => {
     member.guild.channels.get('452304554977918976').send("Bem-Vindo " + member.user + " ao 🏆 Luii");
+
 });
+
