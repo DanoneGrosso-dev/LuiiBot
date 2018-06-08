@@ -73,7 +73,7 @@ switch(argv[0].toLowerCase()) {
         .setTitle(`Clique aqui para abrir o link do convite`)
         .setURL("https://discord.gg/czY9ncR")
         .setColor("2E9AFE")
-        message.channel.sendEmbed(embeddd);
+        message.channel.sendEmbed(embedd);
         break;
 
     case "membros":
